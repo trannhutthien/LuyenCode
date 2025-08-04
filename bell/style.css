@@ -1,0 +1,47 @@
+.container{
+    --size:30px;
+    position:relative;
+    top:50px;
+    left:50px;
+    font-size:var(--size);
+
+}
+
+.container input{
+    position:absolute;
+    width:0px;
+    height:0px;
+    opacity:0;
+}
+ 
+.container .bell-regular{
+    animation: bell .5s;
+}
+.container .bell-solid{
+    display:none;
+    animation: bell .5s;
+}
+
+.container input:checked ~.bell-regular{
+    display:none;
+}
+
+.container input:checked ~.bell-solid{
+    display:block;
+}
+
+@keyframes bell{
+    0%{
+        opacity:0;
+    }
+
+    25%{
+        transform:rotate(25deg);
+    }
+    50%{
+         transform:rotate(-25deg) scale(1.2);
+    }
+    75%{
+        transform:rotate(25deg);
+    }
+}
